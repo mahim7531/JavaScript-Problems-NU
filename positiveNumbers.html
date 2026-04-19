@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive Number Filter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .result {
+            font-size: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .array {
+            margin-bottom: 15px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Positive Number Filter</h2>
+        <div class="array" id="array"></div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function getPositiveNum(arr){
+            let positiveNums = arr.filter(function(num){
+                return num > 0;
+            });
+            return positiveNums;   
+        }
+
+        let numbers = [-1, 2, -3, 4, -5];
+
+        document.getElementById("array").innerText = "Original: " + numbers;
+
+        let result = getPositiveNum(numbers);
+
+        document.getElementById("result").innerText = "Positive: " + result;
+
+        console.log(result);
+    </script>
+
+</body>
+</html>
