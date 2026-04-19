@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter the number of terms: <input type="number" id="terms">
+    <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
+    <p id="result"></p>
+    <script>
+        function generateFibonacci() {
+            var n = parseInt(document.getElementById("terms").value);
+            var fibSeries = [];
+            var a = 0, b = 1, nextTerm;
+            for (var i = 0; i < n; i++) {
+                fibSeries.push(a);
+                nextTerm = a + b;
+                a = b;
+                b = nextTerm;
+            }
+            document.getElementById("result").innerHTML = fibSeries.join(", ");
+        }
+    </script>
+</body>
+</html>
